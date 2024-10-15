@@ -65,6 +65,7 @@
     system = "x86_64-darwin"; # aarch64-darwin or x86_64-darwin
     hostname = "macpremo";
 
+    # raggruppa le variabile e le passa a home-manager
     specialArgs =
       inputs
       // {
@@ -84,14 +85,11 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.verbose = true;
+          home-manager.verbose = true; # valutare se rimuovere una volta capito di più
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.users.${username} = import ./home;
         }
       ];
     };
-
-    # nix code formatter
-    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
   };
 }
