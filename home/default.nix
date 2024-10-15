@@ -5,7 +5,7 @@
   imports = [
     #./shell.nix
     #./git.nix
-    #./core.nix
+    ./core.nix
     #./starship.nix
   ];
 
