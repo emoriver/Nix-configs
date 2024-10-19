@@ -22,7 +22,6 @@
     neofetch
     #git
     vscodium
-    stats
     #karabiner-elements
     alacritty
   ];
@@ -92,12 +91,13 @@
 */
 
       "keepassxc"
+      "stats"
       "tunnelblick"
       "logseq"
       #"microsoft-edge"
       "royal-tsx"
       "foobar2000"
-      "spotify"
+      #"spotify"
       "appcleaner"
     ];
   };

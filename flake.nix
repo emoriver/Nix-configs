@@ -10,7 +10,7 @@
     - 3.0: gestire diversi hosts e diversi OS
     - 3.1: gestire diversi utenti
     - 4.x: nix store e binary cache
-    - 5.x: shell e devend per diversi ambienti "effimeri" di sviluppo
+    - 5.x: shell e devenv per diversi ambienti "effimeri" di sviluppo
   */
 
 /*
