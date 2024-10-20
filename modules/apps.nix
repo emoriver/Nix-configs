@@ -23,7 +23,6 @@
     #git
     vscodium
     #karabiner-elements
-    alacritty
   ];
   #environment.variables.EDITOR = "nvim";
 
@@ -89,16 +88,16 @@
       "insomnia" # REST client
       "wireshark" # network analyzer
 */
-
+      "iterm2"
       "keepassxc"
       "stats"
       "tunnelblick"
       "logseq"
-      #"microsoft-edge"
       "royal-tsx"
       "foobar2000"
-      #"spotify"
+      "spotify"
       "appcleaner"
+      "microsoft-edge"
     ];
   };
 }
