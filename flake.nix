@@ -60,6 +60,7 @@
 };
   outputs = inputs@{ self, nixpkgs, darwin, home-manager, ... }:
   let
+    user = "Andrea Riva";
     username = "emoriver";
     useremail = "emoriver@live.it";
     system = "x86_64-darwin"; # aarch64-darwin or x86_64-darwin
@@ -69,7 +70,7 @@
     specialArgs =
       inputs
       // {
-        inherit username useremail hostname;
+        inherit user username useremail hostname;
       };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {

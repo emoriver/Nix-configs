@@ -28,7 +28,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.git.enable = true; #da misterio77
-
-  programs.zsh.enable = true; #da davi.sh
 }

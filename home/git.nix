@@ -1,5 +1,6 @@
 {
   lib,
+  user,
   username,
   useremail,
   ...
@@ -17,7 +18,8 @@
     lfs.enable = true;
 
     # TODO replace with your own name & email
-    userName = username;
+    #userName = username;
+    userName = user;
     userEmail = useremail;
 
 /*

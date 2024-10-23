@@ -1,10 +1,10 @@
 { pkgs, lib, ... }:
 
 {
-  # enable flakes globally
+  # abilitazione globale dei flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Allow unfree packages
+  # abilitazione dei pacchetti non open source
   nixpkgs.config.allowUnfree = true;
 
   # Auto upgrade nix package and the daemon service.

@@ -98,6 +98,7 @@
       "spotify"
       "appcleaner"
       "microsoft-edge"
+      "fujifilm-tether-app"
     ];
   };
 }
