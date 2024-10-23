@@ -3,7 +3,7 @@
 {
   # import sub modules
   imports = [
-    #./shell.nix
+    ./shell.nix
     ./git.nix
     ./core.nix
     #./starship.nix
