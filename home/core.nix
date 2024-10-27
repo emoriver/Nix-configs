@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{pkgs, ...}: 
+
+  # *--- core di home manager ---*
+
+{
   home.packages = with pkgs; [
     # archives
     #zip

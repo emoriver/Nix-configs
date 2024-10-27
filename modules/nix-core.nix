@@ -1,5 +1,7 @@
 { pkgs, lib, ... }:
 
+  # *--- core del funzionamento di nix (gestione dei pacchetti e dello store) ---*
+
 {
   # abilitazione globale dei flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -7,21 +9,20 @@
   # abilitazione dei pacchetti non open source
   nixpkgs.config.allowUnfree = true;
 
-  # Auto upgrade nix package and the daemon service.
+  # auto upgrade dei pacchetti e del demone
   services.nix-daemon.enable = true;
-  # Use this instead of services.nix-daemon.enable if you
-  # don't wan't the daemon service to be managed for you.
+  # quest'altra configurazione è più generica e non sfrutta gli automatismi di darwin
   # nix.useDaemon = true;
 
   nix.package = pkgs.nix;
 
-  # do garbage collection weekly to keep disk usage low
+  # garbade collection di generations più vecchie di una settimana (ottimizza l'utilizzo del disco)
   nix.gc = {
     automatic = lib.mkDefault true;
     options = lib.mkDefault "--delete-older-than 7d";
   };
 
-  # Disable auto-optimise-store because of this issue:
+  # disabilitazione di auto-optimise-store (de-duplica files nello store) a causa di un bug:
   #   https://github.com/NixOS/nix/issues/7273
   # "error: cannot link '/nix/store/.tmp-link-xxxxx-xxxxx' to '/nix/store/.links/xxxx': File exists"
   nix.settings = {

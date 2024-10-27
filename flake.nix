@@ -4,9 +4,9 @@
     roadmap:
     - 1.1: commentare e comprendere tutto quanto ***
     - 1.2: fare upgrade e downgrade dei pacchetti
-    - 1.3: usare i dotfiles per personalizzare i pacchetti (plug in vs code, alacritty, zsh, ecc.)
+    - 1.3: usare i dotfiles per personalizzare i pacchetti (plug in vs code, zsh, ecc.)
     - 1.4: usare i dotfiles per personalizzare mac os
-    - 2.0: uso avanzato di nix (overlays, installare pacchetti custom - github -)
+    - 2.0: uso avanzato di nix (overlays, installare pacchetti custom - es. karabiner per Monterey -)
     - 3.0: gestire diversi hosts e diversi OS
     - 3.1: gestire diversi utenti
     - 4.x: nix store e binary cache

@@ -1,20 +1,17 @@
 { pkgs, ... }:
 
-  ###################################################################################
-  #
-  #  macOS's System configuration
-  #
-  #  All the configuration options are documented here:
+  # *--- configurazione del sistema macOS ---*
+
+  # tutte le opzioni di configurazione sono commentate qui:
   #    https://daiderd.com/nix-darwin/manual/index.html#sec-options
-  #  Incomplete list of macOS `defaults` commands :
+  # lista incompleta di tutti i comandi di default:
   #    https://github.com/yannbertrand/macos-defaults
-  #
-  ###################################################################################
+
 {
   system = {
+    # se la versione dei pacchetti di default cambia (es. postgres) questo parametro mantiene i dati "stateful"
     stateVersion = 5;
 
-/*
     # activationScripts are executed every time you boot the system or run `nixos-rebuild` / `darwin-rebuild`.
     activationScripts.postUserActivation.text = ''
       # activateSettings -u will reload the settings from the database and apply them to the current session,
@@ -23,20 +20,21 @@
     '';
 
     defaults = {
-      # menuExtraClock.Show24Hour = true;  # show 24 hour clock
+      menuExtraClock.Show24Hour = true;  # orologio 24 ore
       
-      # customize dock
+      # dock
       dock = {
         autohide = true;
-        show-recents = false;  # disable recent apps
+        show-recents = false;
 
-        # customize Hot Corners(触发角, 鼠标移动到屏幕角落时触发的动作)
-        wvous-tl-corner = 2;  # top-left - Mission Control
-        wvous-tr-corner = 13;  # top-right - Lock Screen
-        wvous-bl-corner = 3;  # bottom-left - Application Windows
-        wvous-br-corner = 4;  # bottom-right - Desktop
+        # angoli attivi (sono all'interno di dock ma nelle preferenze di sistema non è così, sono in exposè)
+        wvous-tl-corner = 3;  # top-left - finestre applicazione
+        wvous-tr-corner = 4;  # top-right - scrivania
+        wvous-bl-corner = 5;  # bottom-left - salvaschermo
+        wvous-br-corner = 14; # bottom-right - nota rapida
       };
 
+/*
       # customize finder
       finder = {
         _FXShowPosixPathInTitle = true;  # show full path in finder title
@@ -140,7 +138,7 @@
       loginwindow = {
         GuestEnabled = false;  # disable guest user
         SHOWFULLNAME = true;  # show full name in login window
-      };
+      };  
     };
 
     # keyboard settings is not very useful on macOS
@@ -158,33 +156,32 @@
       #
       # disabled, caused only problems!
       swapLeftCommandAndLeftAlt = false;  
-    };
 
-*/    
-
+*/
+    };   
   };
 
-  # Add ability to used TouchID for sudo authentication
+  # abilita TouchID per l'autenticazione di sudo
   #security.pam.enableSudoTouchIdAuth = true;
 
-  # Create /etc/zshrc that loads the nix-darwin environment.
-  # this is required if you want to use darwin's default shell - zsh
+  # crea /etc/zshrc che carica il nix-darwin environment
+  # richiesto se si vuole usare zsh che è la shell di default di darwin
   programs.zsh.enable = true;
   environment.shells = [
     pkgs.zsh
   ];
 
-  # Set your time zone.
+  # time zone
   time.timeZone = "Europe/Rome";
 
-  # Fonts
+  # fonts
   fonts = {
     packages = with pkgs; [
       # icon fonts
       material-design-icons
       font-awesome
 
-      # nerdfonts
+      # nerdfonts (richiesti per starship)
       # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
       (nerdfonts.override {
         fonts = [
