@@ -25,7 +25,7 @@
       # dock
       dock = {
         autohide = true;
-        show-recents = false;
+        show-recents = true;
 
         # angoli attivi (sono all'interno di dock ma nelle preferenze di sistema non è così, sono in exposè)
         wvous-tl-corner = 3;  # top-left - finestre applicazione
