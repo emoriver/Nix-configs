@@ -34,6 +34,12 @@
 
     # productivity
     #glow # markdown previewer in terminal
+
+
+    neofetch
+    vscodium
+    #karabiner-elements
+
   ];
 
 /*

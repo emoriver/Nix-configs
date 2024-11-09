@@ -19,10 +19,8 @@
     git
     just # use Justfile to simplify nix-darwin's commands 
 
-    neofetch
-    #git
-    vscodium
-    #karabiner-elements
+
+
   ];
   #environment.variables.EDITOR = "nvim";
 

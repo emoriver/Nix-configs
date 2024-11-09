@@ -16,7 +16,7 @@
 
   nix.package = pkgs.nix;
 
-  # garbade collection di generations più vecchie di una settimana (ottimizza l'utilizzo del disco)
+  # garbage collection di generations più vecchie di una settimana (ottimizza l'utilizzo del disco)
   nix.gc = {
     automatic = lib.mkDefault true;
     options = lib.mkDefault "--delete-older-than 7d";
