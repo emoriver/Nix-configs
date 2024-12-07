@@ -37,7 +37,7 @@
 
 
     neofetch
-    #vscodium
+    vscodium
     #karabiner-elements
 
   ];
