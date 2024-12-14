@@ -30,14 +30,14 @@
   inputs = {
     # unstable punta chiaramente a ultima release di nix
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
 
     # su un esempio puntava a nixpkgs senza darwin (così pare vada bene... rimuovere se tutto ok)
     #nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # home-manager installato come modulo e non stand-alone
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
 
       # questo esempio omette proprio la versione: punterà di default unstable? (chiarire poi rimuovere)
       #url = "github:nix-community/home-manager";
