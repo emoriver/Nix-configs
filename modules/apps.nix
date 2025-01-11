@@ -97,7 +97,6 @@
       "appcleaner"
       "microsoft-edge"
       "fujifilm-tether-app"
-      "ghostty"
     ];
   };
 }
